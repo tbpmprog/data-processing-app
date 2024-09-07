@@ -1,0 +1,173 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Предотвращает горизонтальную прокрутку */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Стили для светлой темы */
+.light-theme {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.light-theme .container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1200px; /* Устанавливаем максимальную ширину контейнера */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme button {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.light-theme button:hover {
+    background-color: #0056b3;
+}
+
+.light-theme pre {
+    background-color: #f8f9fa;
+}
+
+/* Стили для темной темы */
+.dark-theme {
+    background-color: #1e1e1e;
+    color: #c7c7c7;
+}
+
+.dark-theme .container {
+    background-color: #292929;
+    width: 100%;
+    max-width: 1200px; /* Устанавливаем максимальную ширину контейнера */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme button {
+    background-color: #42a5f5;
+    color: #fff;
+}
+
+.dark-theme button:hover {
+    background-color: #2196f3;
+}
+
+.dark-theme pre {
+    background-color: #333;
+    color: #e3f2fd;
+}
+
+/* Шапка сайта */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center; /* Выравнивание по центру */
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+main {
+    width: 100%;
+    height: calc(100vh - 140px); /* Высота экрана минус высота шапки и отступы */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Запрещаем прокрутку за пределами блока */
+}
+
+#output {
+    flex: 1;
+    overflow-y: auto;
+    white-space: pre-wrap; /* Перенос текста при необходимости */
+    padding: 10px;
+    box-sizing: border-box; /* Учитывает padding в ширине блока */
+}
+
+#loadingIndicator {
+    text-align: center;
+    margin: 10px;
+}
+
+#stats {
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+}
+
+/* Стили для строк результата */
+.line:nth-child(even) {
+    background-color: #f0f2f5; /* Светло-серый для четных строк */
+}
+
+.line:nth-child(odd) {
+    background-color: #ffffff; /* Белый для нечетных строк */
+}
+
+/* Темные стили для строк результата */
+.dark-theme .line:nth-child(even) {
+    background-color: #1e1e1e; /* Темно-серый для четных строк */
+}
+
+.dark-theme .line:nth-child(odd) {
+    background-color: #292929; /* Еще темнее для нечетных строк */
+}
